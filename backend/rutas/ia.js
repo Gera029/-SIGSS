@@ -12,7 +12,7 @@ router.post('/predecir', (req, res) => {
         return res.status(400).json({ error: "Faltan datos de horas o actividades." });
     }
 
-    // 2. Buscamos la ruta exacta de tu archivo de Python
+    // 2. Buscamos la ruta exacta del archivo de Python
     const scriptPath = path.join(__dirname, '../ia/modelo_ia.py');
 
     // 3. Ejecutamos Python en segundo plano
@@ -20,7 +20,7 @@ router.post('/predecir', (req, res) => {
 
     let dataString = '';
 
-    // 4. Capturamos lo que Python imprima (el JSON que acabas de ver)
+    // 4. Capturamos lo que Python imprima (el JSON)
     pythonProcess.stdout.on('data', (data) => {
         dataString += data.toString();
     });

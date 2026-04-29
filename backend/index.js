@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const pool = require('./db'); // Importamos tu conexión del archivo anterior
+const pool = require('./db'); // Importamos la conexión del archivo anterior
 
 const rutasActividades = require('./rutas/actividades');
 const rutasUsuarios = require('./rutas/usuarios');
@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // ==========================================
-// 🔔 EL CHISMOSO: Monitorea todas las peticiones
+// Monitorea todas las peticiones
 // ==========================================
 app.use((req, res, next) => {
   console.log(`🔔 [${new Date().toLocaleTimeString()}] Petición recibida: ${req.method} ${req.url}`);
@@ -56,7 +56,7 @@ app.post('/api/login', async (req, res) => {
         return res.status(401).json({ error: "El correo no está registrado." });
     }
 
-    // Validamos la contraseña (recuerda que ahorita es texto plano: '123456')
+    // Validamos la contraseña ('123456')
     if (password !== usuario.password_hash) {
         return res.status(401).json({ error: "Contraseña incorrecta." });
     }

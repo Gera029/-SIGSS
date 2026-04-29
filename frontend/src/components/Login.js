@@ -4,7 +4,7 @@ import axios from 'axios'; // Importamos axios para la conexión real
 
 const Login = ({ onLogin }) => {
   const [formData, setFormData] = useState({
-    username: '', // Este será el correo en tu DB
+    username: '', // Este será el correo en la DB
     password: '',
     remember: false
   });

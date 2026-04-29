@@ -15,7 +15,7 @@ router.post('/nueva', async (req, res) => {
             return res.status(400).json({ error: "Faltan datos obligatorios" });
         }
 
-        // 3. Insertamos usando los nombres de columnas de tu imagen
+        // 3. Insertamos usando los nombres de columnas 
         const result = await pool.query(
             `INSERT INTO actividades (id_estudiante, id_proyecto, descripcion, horas, fecha_realizacion, estado)
              VALUES ($1, $2, $3, $4, $5, 'Pendiente') 

@@ -79,7 +79,6 @@ def ia_prediccion():
     horas = datos.get('horas', 0)
     num_actividades = datos.get('actividades', 0)
     
-    # La misma matemática de tu amigo
     promedio = horas / num_actividades if num_actividades > 0 else 0
     progreso = (horas / 480) * 100 
     
